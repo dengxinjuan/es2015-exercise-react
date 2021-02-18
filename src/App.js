@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { choice, remove } from "./helpers";
+import fruits from "./foods";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let fruit = choice(fruits);
+
+  console.log(`I'd like one ${fruit}, please`);
+  console.log(`Here you go: ${fruit}`);
+  console.log(`Delicious! May I have another?`);
+
+  let remaining = remove(fruit, fruits);
+
+  console.log(`I'm sorry, we're all out. We have ${remaining} left.`);
+  return <></>;
 }
 
 export default App;
